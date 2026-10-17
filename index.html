@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEON DASH | Arcade Game</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#">
+        <span class="brand-mark">N</span>
+        <span>NEON<span class="brand-light">DASH</span></span>
+      </a>
+
+      <div class="top-actions">
+        <span class="live-dot"></span>
+        <span class="arcade-label">ARCADE MODE</span>
+        <button class="icon-btn" id="soundToggle">
+          ♫ <span id="soundState">SOUND ON</span>
+        </button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">
+        <span></span> QUICK PLAY · ENDLESS CHALLENGE
+      </div>
+
+      <h1>
+        FEEL THE <span>FLOW.</span><br>
+        BEAT YOUR <span>BEST.</span>
+      </h1>
+
+      <p class="hero-copy">
+        Hindari rintangan, kumpulkan skor, dan buktikan refleks terbaikmu.
+      </p>
+    </section>
+
+    <section class="game-layout">
+      <div class="game-panel">
+        <div class="game-topline">
+          <div>
+            <span class="panel-label">CURRENT RUN</span>
+            <div class="run-state" id="runState">
+              <i></i> READY TO PLAY
+            </div>
+          </div>
+
+          <div class="score-wrap">
+            <span class="panel-label">SCORE</span>
+            <strong id="score">00000</strong>
+          </div>
+        </div>
+
+        <div class="canvas-wrap">
+          <canvas id="gameCanvas"
+                  width="900"
+                  height="500"></canvas>
+
+          <div class="game-overlay" id="gameOverlay">
+            <div class="overlay-icon">▶</div>
+            <div class="overlay-title" id="overlayTitle">
+              SIAP BERGERAK?
+            </div>
+            <p id="overlayText">
+              Klik mulai atau tekan spasi untuk bermain.
+            </p>
+            <button class="primary-btn" id="startBtn">
+              MULAI GAME <span>↗</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="game-footer">
+          <div class="key-hint"><kbd>SPACE</kbd><span>Loncat</span></div>
+          <div class="key-hint"><kbd>↑</kbd><span>Loncat</span></div>
+          <div class="key-hint"><kbd>CLICK</kbd><span>Loncat</span></div>
+          <span class="footer-note">HINDARI RINTANGAN!</span>
+        </div>
+      </div>
+
+      <aside class="side-column">
+        <div class="stat-card best-card">
+          <div class="stat-heading">
+            <span>PERSONAL BEST</span>
+            <span class="stat-icon">✦</span>
+          </div>
+          <strong id="bestScore">00000</strong>
+          <div class="mini-bar"><span id="bestBar"></span></div>
+          <p>Terus pecahkan rekor kamu.</p>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-heading">
+            <span>GAME STATUS</span>
+            <span class="status-pill" id="statusPill">IDLE</span>
+          </div>
+
+          <div class="status-line">
+            <span class="status-dot"></span>
+            <span id="statusText">Menunggu pemain</span>
+          </div>
+
+          <div class="thin-divider"></div>
+
+          <div class="stat-heading">
+            <span>DIFFICULTY</span>
+            <span class="difficulty" id="difficulty">EASY</span>
+          </div>
+
+          <p>Kecepatan meningkat seiring skor bertambah.</p>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-symbol">⌁</div>
+          <div>
+            <strong>STAY SHARP.</strong>
+            <p>Timing adalah segalanya. Satu lompatan tepat bisa mengubah permainan.</p>
+          </div>
+        </div>
+
+        <button class="secondary-btn" id="restartBtn">
+          ↻ <span>ULANGI PERMAINAN</span>
+        </button>
+      </aside>
+    </section>
+
+    <footer class="page-footer">
+      <span>NEON DASH <b>© 2026</b></span>
+      <span>BUILT FOR QUICK REFLEXES <span class="footer-star">✦</span></span>
+    </footer>
+  </main>
+
+  <script src="game.js"></script>
+  <script src="audio.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
